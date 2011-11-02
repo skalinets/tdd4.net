@@ -1,0 +1,81 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>
+        TDD4.Net :: [<asp:ContentPlaceHolder ID="TitleContent"  runat="server" />]
+    </title>
+    <link href="../../Content/Site.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="../../Scripts/jquery-1.4.1.min.js"></script>
+    <link href="../../Scripts/syntaxHighlighter/shThemeDefault.css" rel="stylesheet"
+        type="text/css" />
+    <link href="../../Scripts/syntaxHighlighter/shCore.css" rel="stylesheet" type="text/css" />
+    <script src="../../Scripts/syntaxHighlighter/shCore.js" type="text/javascript"></script>
+    <script src="../../Scripts/syntaxHighlighter/shBrushJScript.js" type="text/javascript"></script>
+    <script src="../../Scripts/syntaxHighlighter/shBrushCSharp.js" type="text/javascript"></script>
+    <script src="../../Scripts/syntaxHighlighter/shBrushXml.js" type="text/javascript"></script>
+    <script src="../../Scripts/syntaxHighlighter/shAutoloader.js" type="text/javascript"></script>
+    <%--<script type="text/javascript">
+    SyntaxHighlighter.autoloader(
+  'js jscript javascript    ../../Scripts/syntaxHighldighter/shBrushJScript.js',
+  'cs csharp    shBrushCSharp.js',
+  'xml            shBrushXml.js'
+);
+
+    
+</script>
+    --%></head>
+<body>
+    
+        <div id="header">
+            <div id="title">
+                
+                   <a href="\"> TDD 4 .Net</a>
+            </div>
+            <div id="logindisplay">
+                <% Html.RenderPartial("LogOnUserControl"); %>
+            </div>
+            <div id="menucontainer">
+                <ul id="menu">
+                    <li>
+                        <%: Html.ActionLink("О Проекте", "About", "Home")%></li>
+                    <li>
+                        <%: Html.ActionLink("Контакты", "Contacts", "Home")%></li>
+                    <li>
+                        <%: Html.ActionLink("Блог", "Index", "Blog")%></li>
+                </ul>
+            </div>
+            
+        </div>
+        <div id="page-wrap">
+            <div id="main-content">
+            <div>
+                <div class="shareButtonContainer"><% Html.RenderPartial("ShareButton"); %></div>
+                </div>
+                <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+            </div>
+            <div id="main-sidebar">
+            <h3>Я буду на</h3>
+            <a href="http://dnepr.agilebasecamp.org/register/" target="_new"><img src="http://dnepr.agilebasecamp.org/wp-content/uploads/2011/05/abc200100_DN.gif"/></a>
+            <a href="http://xpdays.com.ua"><img src="http://xpdays.com.ua/wp-content/uploads/xpdays-logo2.png" title="XP Days Ukraine" width="179" height="81" alt="XP Days Ukraine"></a>
+                <h3>Что еще почитать:</h3>
+                <a href="http://www.arrangeactassert.com/" target="_blank">Arrange Act Assert/</a><br />
+                <a href="http://abdullin.com/" target="_blank">Rinat Abdullin</a><br />
+                <a href="http://www.happy-pm.com" target="_blank">Happy PM</a><br />
+                <a href="http://www.it4business.ru" target="_blank">it4business</a><br />
+                <a href="http://www.hanselman.com/blog/" target="_blank">Scott Hanselman</a>
+            </div>
+        </div>
+    
+    <div id="footer">
+        <a href="mailto:kalinets@gmail.com">(c) 2011 Сергей Калинец</a>
+    </div>
+    <script type="text/javascript">
+        SyntaxHighlighter.all();
+        
+//        alert($('main-sidebar').offsetHeight);
+    </script>
+
+</body>
+</html>
