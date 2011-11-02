@@ -1,4 +1,4 @@
-
+	
 #ignore thumbnails created by windows
 Thumbs.db
 #Ignore files build by Visual Studio
@@ -31,3 +31,7 @@ Web.Debug.config
 App_Data/ASPNETDB.MDF
 App_Data/aspnetdb_log.ldf
 Site.Publish.xml
+Web.Release.config
+ASPNETDB.*
+aspnetdb_log.ldf
+.hgignore
