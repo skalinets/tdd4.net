@@ -56,12 +56,12 @@
                 <asp:ContentPlaceHolder ID="MainContent" runat="server" />
             </div>
             <div id="main-sidebar">
-            <h3>Я буду на</h3>
-            <h4>25-26 Ноября</h4>
-            <a href="http://www.scrumguides.com/2011/06/tdd-net-in-action-2-net-3-4.html" target="_blank"><img src="../../Content/images/banner_SCRUM-nobugs.gif" title="TDD .NET in Action"  alt="TDD .NET in Action"/></a>
-            <br/>
-			<h4>17 Декабря</h4>
-            <a href="http://xpdays.com.ua" target="_blank"><img src="http://xpdays.com.ua/wp-content/uploads/xpdays-logo2.png" title="XP Days Ukraine" width="179" height="81" alt="XP Days Ukraine"/></a>
+<%--            <h3>Я буду на</h3>--%>
+<%--            <h4>25-26 Ноября</h4>--%>
+<%--            <a href="http://www.scrumguides.com/2011/06/tdd-net-in-action-2-net-3-4.html" target="_blank"><img src="../../Content/images/banner_SCRUM-nobugs.gif" title="TDD .NET in Action"  alt="TDD .NET in Action"/></a>--%>
+<%--            <br/>--%>
+<%--			<h4>17 Декабря</h4>--%>
+<%--            <a href="http://xpdays.com.ua" target="_blank"><img src="http://xpdays.com.ua/wp-content/uploads/xpdays-logo2.png" title="XP Days Ukraine" width="179" height="81" alt="XP Days Ukraine"/></a>--%>
                 <h3>Что еще почитать:</h3>
                 <a href="http://www.arrangeactassert.com/" target="_blank">Arrange Act Assert/</a><br />
                 <a href="http://www.beletsky.net/" target="_blank">Alexander Beletsky</a><br />
