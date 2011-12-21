@@ -103,6 +103,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\images\agile-banner-200.gif" />
     <Content Include="Content\images\agile-banner-200.png" />
     <Content Include="Content\images\banner-170-1.png" />
     <Content Include="Content\images\banner_SCRUM-nobugs.gif" />

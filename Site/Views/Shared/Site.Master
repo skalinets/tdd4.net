@@ -31,7 +31,7 @@
         <div id="header">
             <div id="title">
                 
-                   <a href="\"> TDD 4 .Net</a>
+                   <a href="\"> TDD 4 .NET</a>
             </div>
             <div id="logindisplay">
                 <% Html.RenderPartial("LogOnUserControl"); %>
@@ -58,7 +58,7 @@
             <div id="main-sidebar">
             <h3>Я буду на</h3>
             <h4>28 Января</h4>
-            <a href="http://agilebasecamp.org/" target="_blank"><img src="../../Content/images/agile-banner-200.png" title="Agile Base Camp 2012"  alt="Agile Base Camp 2012"/></a>
+            <a href="http://agilebasecamp.org/" target="_blank"><img src="../../Content/images/agile-banner-200.gif" title="Agile Base Camp 2012"  alt="Agile Base Camp 2012"/></a>
 <%--            <br/>--%>
 <%--			<h4>17 Декабря</h4>--%>
 <%--            <a href="http://xpdays.com.ua" target="_blank"><img src="http://xpdays.com.ua/wp-content/uploads/xpdays-logo2.png" title="XP Days Ukraine" width="179" height="81" alt="XP Days Ukraine"/></a>--%>
