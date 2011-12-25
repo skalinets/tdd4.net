@@ -122,7 +122,7 @@ namespace Site.Tests.Controllers
             // Assert
             Assert.IsInstanceOfType(result, typeof(RedirectToRouteResult));
             RedirectToRouteResult redirectResult = (RedirectToRouteResult)result;
-            Assert.AreEqual("Home", redirectResult.RouteValues["controller"]);
+            Assert.AreEqual("Blog", redirectResult.RouteValues["controller"]);
             Assert.AreEqual("Index", redirectResult.RouteValues["action"]);
             Assert.IsTrue(((MockFormsAuthenticationService)controller.FormsService).SignOut_WasCalled);
         }
@@ -158,7 +158,7 @@ namespace Site.Tests.Controllers
             // Assert
             Assert.IsInstanceOfType(result, typeof(RedirectToRouteResult));
             RedirectToRouteResult redirectResult = (RedirectToRouteResult)result;
-            Assert.AreEqual("Home", redirectResult.RouteValues["controller"]);
+            Assert.AreEqual("Blog", redirectResult.RouteValues["controller"]);
             Assert.AreEqual("Index", redirectResult.RouteValues["action"]);
             Assert.IsTrue(((MockFormsAuthenticationService)controller.FormsService).SignIn_WasCalled);
         }
@@ -262,7 +262,7 @@ namespace Site.Tests.Controllers
             // Assert
             Assert.IsInstanceOfType(result, typeof(RedirectToRouteResult));
             RedirectToRouteResult redirectResult = (RedirectToRouteResult)result;
-            Assert.AreEqual("Home", redirectResult.RouteValues["controller"]);
+            Assert.AreEqual("Blog", redirectResult.RouteValues["controller"]);
             Assert.AreEqual("Index", redirectResult.RouteValues["action"]);
         }
 
