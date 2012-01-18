@@ -61,9 +61,10 @@
 <%--            <br/>--%>
 <%--			<h4>17 Декабря</h4>--%>
 <%--            <a href="http://xpdays.com.ua" target="_blank"><img src="http://xpdays.com.ua/wp-content/uploads/xpdays-logo2.png" title="XP Days Ukraine" width="179" height="81" alt="XP Days Ukraine"/></a>--%>
-<div id="recentcomments" class="dsq-widget"><h2 class="dsq-widget-title">Recent Comments</h2><script type="text/javascript" src="http://tdd4net.disqus.com/recent_comments_widget.js?num_items=5&hide_avatars=0&avatar_size=32&excerpt_length=200"></script></div><a href="http://disqus.com/">Powered by Disqus</a>
+<div id="recentcomments" class="dsq-widget"><h3>Recent Comments</h3><script type="text/javascript" src="http://tdd4net.disqus.com/recent_comments_widget.js?num_items=5&hide_avatars=0&avatar_size=32&excerpt_length=200"></script></div><a href="http://disqus.com/">Powered by Disqus</a>
                 <h3>Что еще почитать:</h3>
-                <a href="http://www.arrangeactassert.com/" target="_blank">Arrange Act Assert/</a><br />
+                <a href="http://www.arrangeactassert.com/" target="_blank">Arrange Act Assert</a><br />
+                <a href="http://ayende.com/blog" target="_blank">Ayende @ Rahien</a><br />
                 <a href="http://www.beletsky.net/" target="_blank">Alexander Beletsky</a><br />
                 <a href="http://abdullin.com/" target="_blank">Rinat Abdullin</a><br />
                 <a href="http://www.happy-pm.com" target="_blank">Happy PM</a><br />

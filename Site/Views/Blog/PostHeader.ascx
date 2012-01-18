@@ -11,8 +11,11 @@
     <%
           }%>
     <span class="postTitle">
-        <%= Html.ActionLink(Model.Title, "Post", new { postID = Model.ID })%></span>
+        <%:Html.ActionLink(Model.Title, "Post", new { postID = Model.ID })%><br/>
+        
+    </span>
 </h3>
+<a href="<%=Url.Action("Post", new { postID = Model.ID })%>#disqus_thread" data-disqus-identifier="<%= Model.ID%>"></a>
 <%
       if (AuthorizationHelper.IsAdmin)
     {
