@@ -35,4 +35,5 @@ Web.Release.config
 ASPNETDB.*
 aspnetdb_log.ldf
 .hgignore
-Tdd4Net.1.1.dotCover
+*.dotCover
+*.ncrunchproject
