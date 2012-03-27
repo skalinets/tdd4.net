@@ -65,7 +65,7 @@
             <div id="menucontainer">
                 <ul id="menu">
                     <li>
-                        <%: Html.ActionLink("О Проекте", "About", "Home")%></li>
+                        <%--<%: Html.ActionLink("О Проекте", "About", "Home")%></li>--%>
                     <li>
                         <%: Html.ActionLink("Контакты", "Contacts", "Home")%></li>
                     <li>
@@ -82,10 +82,10 @@
                 <asp:ContentPlaceHolder ID="MainContent" runat="server" />
             </div>
             <div id="main-sidebar">
-<%--            <h3>Я буду на</h3>--%>
+            <h3>Я буду на</h3>
 <%--            <a href="http://agilebasecamp.org/" target="_blank"><img src="http://agilebasecamp.org/wp-content/uploads/2011/12/banner-200-1.gif" alt="I am a speaker" title="I am a speaker" width="200" height="200" /></a>--%>
-<%--            <a href="http://agilebasecamp.org/" target="_blank"><img src="../../Content/images/agile-banner-200.gif" title="Agile Base Camp 2012"  alt="Agile Base Camp 2012"/></a>--%>
-<%--            <br/>--%>
+            <a href="http://agilebasecamp.org/" target="_blank"><img src="../../Content/images/agile-banner-200.gif" title="Agile Base Camp 2012"  alt="Agile Base Camp 2012"/></a>
+            <br/>
 <%--			<h4>17 Декабря</h4>--%>
 <%--            <a href="http://xpdays.com.ua" target="_blank"><img src="http://xpdays.com.ua/wp-content/uploads/xpdays-logo2.png" title="XP Days Ukraine" width="179" height="81" alt="XP Days Ukraine"/></a>--%>
 <div id="recentcomments" class="dsq-widget"><h3>Recent Comments</h3><script type="text/javascript" src="http://tdd4net.disqus.com/recent_comments_widget.js?num_items=5&hide_avatars=0&avatar_size=32&excerpt_length=200"></script></div><a href="http://disqus.com/">Powered by Disqus</a>
