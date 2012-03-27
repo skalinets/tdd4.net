@@ -37,3 +37,4 @@ aspnetdb_log.ldf
 .hgignore
 *.dotCover
 *.ncrunchproject
+*.ncrunchsolution
