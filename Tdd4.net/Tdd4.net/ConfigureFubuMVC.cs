@@ -1,4 +1,6 @@
 using FubuMVC.Core;
+using FubuMVC.Razor;
+using Tdd4.net.Features;
 
 namespace Tdd4.net
 {
@@ -18,6 +20,10 @@ namespace Tdd4.net
                 .IgnoreControllerNamesEntirely()
                 .IgnoreMethodSuffix("Html")
                 .RootAtAssemblyNamespace();
+
+            ApplyHandlerConventions<RootAnchor>();
+            
+            Import<RazorEngineRegistry>();
 
             // Match views to action methods by matching
             // on model type, view name, and namespace
