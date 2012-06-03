@@ -96,6 +96,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Scripts\bootstrap-min.js" />
+    <None Include="Content\Scripts\my.asset.config" />
     <Content Include="fubu-content\FubuMVC.GettingStarted.dll" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -123,6 +125,7 @@
   <ItemGroup>
     <Content Include="Features\Home\Home.cshtml" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
   <ProjectExtensions>

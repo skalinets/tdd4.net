@@ -25,6 +25,8 @@ namespace Tdd4.net
             
             Import<RazorEngineRegistry>();
 
+            Assets.YSOD_on_missing_assets(true);
+
             // Match views to action methods by matching
             // on model type, view name, and namespace
             Views.TryToAttachWithDefaultConventions();
