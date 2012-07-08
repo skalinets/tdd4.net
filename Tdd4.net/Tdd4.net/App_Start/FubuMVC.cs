@@ -3,9 +3,10 @@ using Bottles;
 using FubuMVC.Core;
 using FubuMVC.StructureMap;
 using StructureMap;
+using Tdd4.net.Business;
 
 // You can remove the reference to WebActivator by calling the Start() method from your Global.asax Application_Start
-[assembly: WebActivator.PreApplicationStartMethod(typeof(Tdd4.net.App_Start.AppStartFubuMVC), "Start", callAfterGlobalAppStart: true)]
+[assembly: WebActivator.PreApplicationStartMethod(typeof(Tdd4.net.App_Start.AppStartFubuMVC), "Start")]
 
 namespace Tdd4.net.App_Start
 {
@@ -26,11 +27,38 @@ namespace Tdd4.net.App_Start
                 // but FubuMVC just adds configuration to an IoC container so
                 // that you can use the native registration API's for your
                 // IoC container for the rest of your application
-                .StructureMap(new Container())
+                .StructureMap(ContainerFactory.Container())
                 .Bootstrap();
 
-			// Ensure that no errors occurred during bootstrapping
-			PackageRegistry.AssertNoFailures();
+            // Ensure that no errors occurred during bootstrapping
+            PackageRegistry.AssertNoFailures();
         }
     }
+
+    public static class ContainerFactory
+    {
+        private static readonly Container container = InitContainer();
+
+        public static IContainer Container()
+        {
+            return container;
+        }
+
+        private static Container InitContainer()
+        {
+            return new Container(c =>
+                                     {
+                                         c.ForSingletonOf<IBlog>();
+                                         c.Scan(sc =>
+                                                    {
+                                                        sc.TheCallingAssembly();
+                                                        sc.WithDefaultConventions();
+                                                    });
+                                     }
+
+                );
+        }
+    }
+
+    
 }

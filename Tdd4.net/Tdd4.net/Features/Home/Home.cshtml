@@ -1,4 +1,4 @@
-﻿@model Tdd4.net.Features.Home.OutModel
+﻿@model Tdd4.net.Features.Home.AllPostsModel
            
 @{
     this.Asset("bootstkrap");
@@ -11,7 +11,16 @@
         @this.WriteAssetTags()
     </head>
     <body>
+        tttttttttt
         <h1>@Model.Message</h1>Text
+        @foreach(var post in Model.Posts)
+        {
+            @: <h2>@post.Title</h2>
+            @: <p>@post.Body</p>
+            @: ===============
+        }
+            
+
         <h2>@Guid.NewGuid().ToString()</h2>
     </body>
 </html>
