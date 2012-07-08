@@ -1,0 +1,3 @@
+[submodule "jasmine-examples"]
+	path = jasmine-examples
+	url = https://github.com/skalinets/jasmine-examples.git
