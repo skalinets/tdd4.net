@@ -110,6 +110,7 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <Content Include="Features\Home\Add.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\FubuMVC.cs" />
@@ -117,7 +118,13 @@
     <Compile Include="Business\Post.cs" />
     <Compile Include="Business\Blog.cs" />
     <Compile Include="ConfigureFubuMVC.cs" />
+    <Compile Include="Features\Add\GetHandler.cs" />
+    <Compile Include="Features\Add\PostHandler.cs" />
+    <Compile Include="Features\Home\AllPostsModel.cs" />
+    <Compile Include="Features\Home\PostFilter.cs" />
     <Compile Include="Features\Home\GetHandler.cs" />
+    <Compile Include="Features\Remove\GetHandler.cs" />
+    <Compile Include="Features\Remove\RemoveModel.cs" />
     <Compile Include="Features\RootAnchor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

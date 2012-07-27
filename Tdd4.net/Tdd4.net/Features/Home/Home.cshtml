@@ -1,4 +1,7 @@
-﻿@model Tdd4.net.Features.Home.AllPostsModel
+﻿@using Tdd4.net.Features
+@using Tdd4.net.Features.Add
+@using Tdd4.net.Features.Remove
+@model Tdd4.net.Features.Home.AllPostsModel
            
 @{
     this.Asset("bootstkrap");
@@ -17,9 +20,16 @@
         {
             @: <h2>@post.Title</h2>
             @: <p>@post.Body</p>
+            @: <p>@post.ImageDescription</p>
+            @: <img src="@post.ImageUrl"/>
             @: ===============
-        }
-            
+            <br/>
+            @this.LinkTo(new RemoveModel{PostIdToRemove = post.Id}).Text("Remove Post")
+
+        }asdasd
+        <br/>
+        @this.LinkTo(new FooAddPost()).Text("Add new post")
+@*        <button onclick=""></button>*@
 
         <h2>@Guid.NewGuid().ToString()</h2>
     </body>

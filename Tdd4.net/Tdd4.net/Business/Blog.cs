@@ -8,6 +8,20 @@ namespace Tdd4.net.Business
     {
         private readonly List<Post> posts = new List<Post>();
 
+        public Blog()
+        {
+            this.posts.AddRange(4.Times(i => GetRandomPost()));
+        }
+
+        private static Post GetRandomPost()
+        {
+            return new Post
+                       {
+                           Title = "title " + Guid.NewGuid(),
+                           Body = "this is random body " + Guid.NewGuid()
+                       };
+        }
+
         public IEnumerable<Post> GetPosts(Func<object, bool> func)
         {
             return posts.Where(p => func(p)).ToList();
@@ -17,5 +31,20 @@ namespace Tdd4.net.Business
         {
             this.posts.AddRange(posts);
         }
+
+        public void RemovePostById(Guid id)
+        {
+            posts.Remove(posts.First(p => p.Id == id));
+
+        }
     }
+
+    public static class EnumerableExtensions
+    {
+        public static IEnumerable<T> Times<T>(this int number, Func<int, T> generator)
+        {
+            return Enumerable.Range(1, number).Select(generator);
+        }
+    }
+
 }

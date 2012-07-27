@@ -1,0 +1,28 @@
+﻿@model Tdd4.net.Business.Post
+           
+@{
+    this.Asset("bootstrap");
+}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>New Post</title>
+        @this.WriteAssetTags()
+    </head>
+    <body>
+        <h1>New Post:</h1>
+        <div>
+            @this.FormFor().Attr("enctype", "multipart/form-data")
+            @this.Edit(p=> p.Title)
+            @this.Edit(p=> p.Body)
+            
+@*            @this.Edit(p => p.Image)*@
+            <input type="file" name="Image" />
+            <input type="submit" value="Add Post"/>
+            <br/> image image
+        </form>
+         
+        </div>
+    </body>
+</html>

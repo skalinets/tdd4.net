@@ -1,4 +1,8 @@
 using FubuMVC.Core;
+using FubuMVC.Core.Diagnostics;
+using FubuMVC.Core.Registration.Conventions;
+using FubuMVC.Core.Registration.Nodes;
+using FubuMVC.Core.Registration.Routes;
 using FubuMVC.Razor;
 using Tdd4.net.Features;
 

@@ -7,5 +7,6 @@ namespace Tdd4.net.Business
     {
         IEnumerable<Post> GetPosts(Func<object, bool> func);
         void AddPosts(IEnumerable<Post> posts);
+        void RemovePostById(Guid id);
     }
 }

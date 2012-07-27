@@ -1,32 +1,23 @@
-using System.Collections.Generic;
 using Tdd4.net.Business;
 
 namespace Tdd4.net.Features.Home
 {
     public class GetHandler
     {
-        private readonly Blog blog;
+        private readonly IBlog blog;
 
-        public GetHandler(Blog blog)
+        public GetHandler(IBlog blog)
         {
             this.blog = blog;
         }
 
-        public AllPostsModel Execute()
+        public AllPostsModel Execute(PostFilter model)
         {
             return new AllPostsModel("Hello", blog.GetPosts(p => true));
         }
     }
 
-    public class AllPostsModel
+    namespace Add
     {
-        public AllPostsModel(string message, IEnumerable<Post> posts)
-        {
-            this.Message = message;
-            Posts = posts;
-        }
-
-        public string Message { get; private set; }
-        public IEnumerable<Post> Posts { get; set; }
     }
 }
