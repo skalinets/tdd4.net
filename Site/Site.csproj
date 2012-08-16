@@ -99,6 +99,7 @@
     <Content Include="Content\images\agile-banner-200.png" />
     <Content Include="Content\images\banner-170-1.png" />
     <Content Include="Content\images\banner_SCRUM-nobugs.gif" />
+    <Content Include="Content\images\itjam.jpg" />
     <Content Include="Content\images\TDD.png" />
     <Content Include="Content\images\tdd4net_220.png" />
     <Content Include="Content\images\tddsmall.png" />
