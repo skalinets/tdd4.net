@@ -44,7 +44,7 @@ namespace Site.Controllers
         public ActionResult Edit(Guid postID)
         {
             Post post = GetPostByID(postID);
-            return View(post);
+            return View(post); 
         }
 
         [ValidateInput(false)]

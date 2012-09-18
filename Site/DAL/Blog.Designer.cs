@@ -103,9 +103,9 @@ namespace Site.DAL
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="BlogModel", Name="Post")]
+    [EdmEntityType(NamespaceName="BlogModel", Name="Post")]
     [Serializable()]
-    [DataContractAttribute(IsReference=true)]
+    [DataContract(IsReference=true)]
     public partial class Post : EntityObject
     {
         #region Factory Method
@@ -119,7 +119,7 @@ namespace Site.DAL
         /// <param name="index">Initial value of the Index property.</param>
         /// <param name="posted">Initial value of the Posted property.</param>
         /// <param name="isDraft">Initial value of the IsDraft property.</param>
-        public static Post CreatePost(global::System.Guid id, global::System.String title, global::System.String text, global::System.String index, global::System.DateTime posted, global::System.Boolean isDraft)
+        public static Post CreatePost(Guid id, String title, String text, String index, DateTime posted, Boolean isDraft)
         {
             Post post = new Post();
             post.ID = id;
@@ -137,9 +137,9 @@ namespace Site.DAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Guid ID
+        [EdmScalarProperty(EntityKeyProperty=true, IsNullable=false)]
+        [DataMember()]
+        public Guid ID
         {
             get
             {
@@ -151,22 +151,22 @@ namespace Site.DAL
                 {
                     OnIDChanging(value);
                     ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
+                    _ID = SetValidValue(value);
                     ReportPropertyChanged("ID");
                     OnIDChanged();
                 }
             }
         }
-        private global::System.Guid _ID;
-        partial void OnIDChanging(global::System.Guid value);
+        private Guid _ID;
+        partial void OnIDChanging(Guid value);
         partial void OnIDChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String Title
+        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
+        [DataMember()]
+        public String Title
         {
             get
             {
@@ -176,21 +176,21 @@ namespace Site.DAL
             {
                 OnTitleChanging(value);
                 ReportPropertyChanging("Title");
-                _Title = StructuralObject.SetValidValue(value, false);
+                _Title = SetValidValue(value, false);
                 ReportPropertyChanged("Title");
                 OnTitleChanged();
             }
         }
-        private global::System.String _Title;
-        partial void OnTitleChanging(global::System.String value);
+        private String _Title;
+        partial void OnTitleChanging(String value);
         partial void OnTitleChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String Text
+        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
+        [DataMember()]
+        public String Text
         {
             get
             {
@@ -200,21 +200,21 @@ namespace Site.DAL
             {
                 OnTextChanging(value);
                 ReportPropertyChanging("Text");
-                _Text = StructuralObject.SetValidValue(value, false);
+                _Text = SetValidValue(value, false);
                 ReportPropertyChanged("Text");
                 OnTextChanged();
             }
         }
-        private global::System.String _Text;
-        partial void OnTextChanging(global::System.String value);
+        private String _Text;
+        partial void OnTextChanging(String value);
         partial void OnTextChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String Index
+        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
+        [DataMember()]
+        public String Index
         {
             get
             {
@@ -224,21 +224,21 @@ namespace Site.DAL
             {
                 OnIndexChanging(value);
                 ReportPropertyChanging("Index");
-                _Index = StructuralObject.SetValidValue(value, false);
+                _Index = SetValidValue(value, false);
                 ReportPropertyChanged("Index");
                 OnIndexChanged();
             }
         }
-        private global::System.String _Index;
-        partial void OnIndexChanging(global::System.String value);
+        private String _Index;
+        partial void OnIndexChanging(String value);
         partial void OnIndexChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.DateTime Posted
+        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
+        [DataMember()]
+        public DateTime Posted
         {
             get
             {
@@ -248,21 +248,21 @@ namespace Site.DAL
             {
                 OnPostedChanging(value);
                 ReportPropertyChanging("Posted");
-                _Posted = StructuralObject.SetValidValue(value);
+                _Posted = SetValidValue(value);
                 ReportPropertyChanged("Posted");
                 OnPostedChanged();
             }
         }
-        private global::System.DateTime _Posted;
-        partial void OnPostedChanging(global::System.DateTime value);
+        private DateTime _Posted;
+        partial void OnPostedChanging(DateTime value);
         partial void OnPostedChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Boolean IsDraft
+        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
+        [DataMember()]
+        public Boolean IsDraft
         {
             get
             {
@@ -272,13 +272,13 @@ namespace Site.DAL
             {
                 OnIsDraftChanging(value);
                 ReportPropertyChanging("IsDraft");
-                _IsDraft = StructuralObject.SetValidValue(value);
+                _IsDraft = SetValidValue(value);
                 ReportPropertyChanged("IsDraft");
                 OnIsDraftChanged();
             }
         }
-        private global::System.Boolean _IsDraft;
-        partial void OnIsDraftChanging(global::System.Boolean value);
+        private Boolean _IsDraft;
+        partial void OnIsDraftChanging(Boolean value);
         partial void OnIsDraftChanged();
 
         #endregion

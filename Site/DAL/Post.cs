@@ -1,4 +1,7 @@
-﻿namespace Site.DAL
+﻿using System;
+using System.Linq;
+
+namespace Site.DAL
 {
     public partial class Post
     {
@@ -6,22 +9,32 @@
         {
             get
             {
-                int indicatorPosition = GetIndicatorPosition();
+                var indicatorPosition = GetIndicatorPosition();
                 var shouldBeTruncated = indicatorPosition > -1;
-                if (shouldBeTruncated)
-                {
-                    return Text.Substring(0, indicatorPosition);
-                }
-                return Text;
+                var displayText = DisplayText;
+                return shouldBeTruncated ? displayText.Substring(0, indicatorPosition) : displayText;
             }
         }
 
         private int GetIndicatorPosition()
         {
-            const string cutIndicator = "<!--more-->";
-            return Text.IndexOf(cutIndicator);
+            var values = new []{"<!--more-->", "[|more|]"};
+            return values.Max(value => DisplayText.IndexOf(value, StringComparison.Ordinal));
         }
 
         public bool HasMoreTag { get { return GetIndicatorPosition() > -1; } }
+
+        public string DisplayText
+        {
+            get 
+            { 
+                return Text
+                    .Replace("[[code]", CodePrefix)
+                    .Replace("[code]]", CodeSuffix); 
+            }
+        }
+
+        public const string CodeSuffix = @"</pre>";
+        public const string CodePrefix = @"<pre class=""brush: csharp;"">";
     }
 }

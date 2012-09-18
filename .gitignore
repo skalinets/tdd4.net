@@ -32,9 +32,11 @@ App_Data/ASPNETDB.MDF
 App_Data/aspnetdb_log.ldf
 Site.Publish.xml
 Web.Release.config
+Web.config
 ASPNETDB.*
 aspnetdb_log.ldf
 .hgignore
 *.dotCover
 *.ncrunchproject
 *.ncrunchsolution
+packages/
