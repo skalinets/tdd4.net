@@ -7,7 +7,7 @@
     <br />
     <%:Html.ActionLink("<< Назад", "Index")%>
     <%Html.RenderPartial("PostHeader"); %>
-    <%=Model.Text%>
+    <%=Model.DisplayText%>
     <%:Html.ActionLink("<< Назад", "Index")%>
     <div id="disqus_thread">
     </div>

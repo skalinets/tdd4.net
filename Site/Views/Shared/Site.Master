@@ -82,9 +82,9 @@
                 <asp:ContentPlaceHolder ID="MainContent" runat="server" />
             </div>
             <div id="main-sidebar">
-            <h3>Я буду на</h3>
+            <%--<h3>Я буду на</h3>--%>
 <%--            <a href="http://agilebasecamp.org/" target="_blank"><img src="http://agilebasecamp.org/wp-content/uploads/2011/12/banner-200-1.gif" alt="I am a speaker" title="I am a speaker" width="200" height="200" /></a>--%>
-            <a href="http://it-jam.ciklum.net/" target="_blank"><img src="../../Content/images/itjam.jpg" title="IT Jam"  alt="IT Jam Logo"/></a>
+            <%--<a href="http://it-jam.ciklum.net/" target="_blank"><img src="../../Content/images/itjam.jpg" title="IT Jam"  alt="IT Jam Logo"/></a>--%>
             <br/>
 <%--			<h4>17 Декабря</h4>--%>
 <%--            <a href="http://xpdays.com.ua" target="_blank"><img src="http://xpdays.com.ua/wp-content/uploads/xpdays-logo2.png" title="XP Days Ukraine" width="179" height="81" alt="XP Days Ukraine"/></a>--%>
