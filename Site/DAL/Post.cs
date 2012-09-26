@@ -26,11 +26,15 @@ namespace Site.DAL
 
         public string DisplayText
         {
-            get 
-            { 
+            get
+            {
                 return Text
                     .Replace("[[code]", CodePrefix)
-                    .Replace("[code]]", CodeSuffix); 
+                    .Replace("[code]]", CodeSuffix)
+                    .Replace("<span style=\"white-space: pre;\"> ", "\t")
+                    .Replace("</span>", "")
+                    .Replace("<p>", "")
+                    .Replace("</p>", "");
             }
         }
 

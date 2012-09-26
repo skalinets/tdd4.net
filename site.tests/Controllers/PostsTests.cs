@@ -67,5 +67,32 @@ namespace Site.Tests.Controllers
             // assert
             displayText.Should().Be(Post.CodePrefix + @"this is my code" + Post.CodeSuffix);
         }
+
+        [Fact]
+        public void paragraphs_in_code_should_be_removed()
+        {
+            // arrange
+            var post = new Post {Text = "<p>[[code]void foo</p>\n<p><span style=\"white-space: pre;\"> </span>void Boo() {}</p>\n<p>}[code]]</p>"};
+
+            // act
+            var displayText = post.DisplayText;
+
+            // assert
+            displayText.Should().Be(Post.CodePrefix + "void foo\n\tvoid Boo() {}\n}" + Post.CodeSuffix);
+        }
+
+        [Fact]
+        public void paragraphs_in_text_should_not_be_removed()
+        {
+            // arrange
+            var text = "<p>this is text</p><p>with paragraphs</p>";
+            var post = new Post {Text = text};
+
+            // act
+            var displayText = post.DisplayText;
+
+            // assert
+            displayText.Should().Be(text);
+        }
     }
 }
