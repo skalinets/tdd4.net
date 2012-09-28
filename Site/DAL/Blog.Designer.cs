@@ -8,15 +8,15 @@
 //------------------------------------------------------------------------------
 
 using System;
+using System.ComponentModel;
+using System.Data.EntityClient;
 using System.Data.Objects;
 using System.Data.Objects.DataClasses;
-using System.Data.EntityClient;
-using System.ComponentModel;
-using System.Xml.Serialization;
+using System.Linq;
 using System.Runtime.Serialization;
+using System.Xml.Serialization;
 
 [assembly: EdmSchemaAttribute()]
-
 namespace Site.DAL
 {
     #region Contexts
@@ -82,6 +82,7 @@ namespace Site.DAL
         private ObjectSet<Post> _Posts;
 
         #endregion
+
         #region AddTo Methods
     
         /// <summary>
@@ -93,19 +94,19 @@ namespace Site.DAL
         }
 
         #endregion
+
     }
-    
 
     #endregion
-    
+
     #region Entities
     
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityType(NamespaceName="BlogModel", Name="Post")]
+    [EdmEntityTypeAttribute(NamespaceName="BlogModel", Name="Post")]
     [Serializable()]
-    [DataContract(IsReference=true)]
+    [DataContractAttribute(IsReference=true)]
     public partial class Post : EntityObject
     {
         #region Factory Method
@@ -119,7 +120,7 @@ namespace Site.DAL
         /// <param name="index">Initial value of the Index property.</param>
         /// <param name="posted">Initial value of the Posted property.</param>
         /// <param name="isDraft">Initial value of the IsDraft property.</param>
-        public static Post CreatePost(Guid id, String title, String text, String index, DateTime posted, Boolean isDraft)
+        public static Post CreatePost(global::System.Guid id, global::System.String title, global::System.String text, global::System.String index, global::System.DateTime posted, global::System.Boolean isDraft)
         {
             Post post = new Post();
             post.ID = id;
@@ -132,14 +133,15 @@ namespace Site.DAL
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=true, IsNullable=false)]
-        [DataMember()]
-        public Guid ID
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Guid ID
         {
             get
             {
@@ -151,22 +153,22 @@ namespace Site.DAL
                 {
                     OnIDChanging(value);
                     ReportPropertyChanging("ID");
-                    _ID = SetValidValue(value);
+                    _ID = StructuralObject.SetValidValue(value);
                     ReportPropertyChanged("ID");
                     OnIDChanged();
                 }
             }
         }
-        private Guid _ID;
-        partial void OnIDChanging(Guid value);
+        private global::System.Guid _ID;
+        partial void OnIDChanging(global::System.Guid value);
         partial void OnIDChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
-        [DataMember()]
-        public String Title
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Title
         {
             get
             {
@@ -176,21 +178,21 @@ namespace Site.DAL
             {
                 OnTitleChanging(value);
                 ReportPropertyChanging("Title");
-                _Title = SetValidValue(value, false);
+                _Title = StructuralObject.SetValidValue(value, false);
                 ReportPropertyChanged("Title");
                 OnTitleChanged();
             }
         }
-        private String _Title;
-        partial void OnTitleChanging(String value);
+        private global::System.String _Title;
+        partial void OnTitleChanging(global::System.String value);
         partial void OnTitleChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
-        [DataMember()]
-        public String Text
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Text
         {
             get
             {
@@ -200,21 +202,21 @@ namespace Site.DAL
             {
                 OnTextChanging(value);
                 ReportPropertyChanging("Text");
-                _Text = SetValidValue(value, false);
+                _Text = StructuralObject.SetValidValue(value, false);
                 ReportPropertyChanged("Text");
                 OnTextChanged();
             }
         }
-        private String _Text;
-        partial void OnTextChanging(String value);
+        private global::System.String _Text;
+        partial void OnTextChanging(global::System.String value);
         partial void OnTextChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
-        [DataMember()]
-        public String Index
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Index
         {
             get
             {
@@ -224,21 +226,21 @@ namespace Site.DAL
             {
                 OnIndexChanging(value);
                 ReportPropertyChanging("Index");
-                _Index = SetValidValue(value, false);
+                _Index = StructuralObject.SetValidValue(value, false);
                 ReportPropertyChanged("Index");
                 OnIndexChanged();
             }
         }
-        private String _Index;
-        partial void OnIndexChanging(String value);
+        private global::System.String _Index;
+        partial void OnIndexChanging(global::System.String value);
         partial void OnIndexChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
-        [DataMember()]
-        public DateTime Posted
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime Posted
         {
             get
             {
@@ -248,21 +250,21 @@ namespace Site.DAL
             {
                 OnPostedChanging(value);
                 ReportPropertyChanging("Posted");
-                _Posted = SetValidValue(value);
+                _Posted = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("Posted");
                 OnPostedChanged();
             }
         }
-        private DateTime _Posted;
-        partial void OnPostedChanging(DateTime value);
+        private global::System.DateTime _Posted;
+        partial void OnPostedChanging(global::System.DateTime value);
         partial void OnPostedChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
-        [DataMember()]
-        public Boolean IsDraft
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Boolean IsDraft
         {
             get
             {
@@ -272,19 +274,21 @@ namespace Site.DAL
             {
                 OnIsDraftChanging(value);
                 ReportPropertyChanging("IsDraft");
-                _IsDraft = SetValidValue(value);
+                _IsDraft = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("IsDraft");
                 OnIsDraftChanged();
             }
         }
-        private Boolean _IsDraft;
-        partial void OnIsDraftChanging(Boolean value);
+        private global::System.Boolean _IsDraft;
+        partial void OnIsDraftChanging(global::System.Boolean value);
         partial void OnIsDraftChanged();
 
         #endregion
+
     
     }
 
     #endregion
+
     
 }

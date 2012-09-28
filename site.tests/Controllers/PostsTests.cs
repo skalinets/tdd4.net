@@ -78,7 +78,7 @@ namespace Site.Tests.Controllers
             var displayText = post.DisplayText;
 
             // assert
-            displayText.Should().Be(Post.CodePrefix + "void foo\n\tvoid Boo() {}\n}" + Post.CodeSuffix);
+            displayText.Should().Be("<p>" + Post.CodePrefix + "void foo\n\tvoid Boo() {}\n}" + Post.CodeSuffix + "</p>");
         }
 
         [Fact]
