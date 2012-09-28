@@ -50,6 +50,20 @@ namespace Site.Tests.Controllers
 
         }
 
+        [Fact]
+        public void display_text_should_not_contain_more_delimiter()
+        {
+            // arrange
+            var moreDelimiter = "[|more|]";
+            var post = new Post {Text = "text" + moreDelimiter + "another text"};
+
+            // act
+            var text = post.DisplayText;
+
+            // assert
+            text.Should().NotContain(moreDelimiter);
+        }
+
         public static IEnumerable<object[]> Delimiters
         {
             get { return new[] {"<!--more-->", "[|more|]"}.Select(i => new[] {i}).ToArray(); }

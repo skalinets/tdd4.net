@@ -6,6 +6,8 @@ namespace Site.DAL
 {
     public partial class Post
     {
+        private readonly string[] briefDelimiters = new []{"<!--more-->", "[|more|]"};
+
         public string BriefText
         {
             get
@@ -19,8 +21,7 @@ namespace Site.DAL
 
         private int GetIndicatorPosition()
         {
-            var values = new []{"<!--more-->", "[|more|]"};
-            return values.Max(value => DisplayText.IndexOf(value, StringComparison.Ordinal));
+            return briefDelimiters.Max(value => DisplayText.IndexOf(value, StringComparison.Ordinal));
         }
 
         public bool HasMoreTag { get { return GetIndicatorPosition() > -1; } }
@@ -45,19 +46,17 @@ namespace Site.DAL
                                                        items[1]
                                                    });
                                     });
-                                        string replace = String.Join("[[code]", tt);
-//                                        Regex.Replace(Text, @"(\[\[code\].*)(<p>|</p>)(.*\[code\]\])", @"\1\3", RegexOptions.Multiline);
+                                        string result = String.Join("[[code]", tt);
 
-                replace = replace
+                result = result
                     .Replace("[[code]", CodePrefix)
                     .Replace("[code]]", CodeSuffix)
                     .Replace("<span style=\"white-space: pre;\"> ", "\t")
-                    .Replace("</span>", "")
-//                    .Replace("<p>", "")
-//                    .Replace("</p>", "")
-                    ;
+                    .Replace("</span>", "");
 
-                return replace;
+                result = result.Replace(briefDelimiters[1], briefDelimiters[0]);
+
+                return result;
             }
         }
 
