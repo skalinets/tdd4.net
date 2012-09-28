@@ -51,7 +51,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <PrecompileBeforePublish>true</PrecompileBeforePublish>
+    <PrecompileBeforePublish>false</PrecompileBeforePublish>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
@@ -176,7 +176,6 @@
     <Content Include="test.htm" />
     <Content Include="Views\Blog\Edit.aspx" />
     <Content Include="Views\Blog\Create.aspx" />
-    <Content Include="Views\Blog\CutText.ascx" />
     <Content Include="Views\Blog\Detail.ascx" />
     <Content Include="Views\Blog\Pager.ascx" />
     <Content Include="Views\Blog\Post.aspx" />
