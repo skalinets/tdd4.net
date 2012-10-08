@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net;
 using System.Text;
+using System.Threading.Tasks;
 using FizzWare.NBuilder;
 using FluentAssertions;
 using Tdd4.net.Business;
@@ -81,6 +83,28 @@ namespace Tdd4Net.Tests
 //            handler.Execute(model: new FubuImageModel{Url = id.ToString())
 
             // assert
+        }
+    }
+
+    public class GithubProviderTester
+    {
+        [Fact]
+        public void should_get_text_from_github()
+        {
+            var githubProvider = new GithubProvider();
+
+            string result = githubProvider.GetText("first-post").Result;
+
+            result.Should().Contain("this is my");
+        }
+    }
+
+    public class GithubProvider
+    {
+        public async Task<string> GetText(string postId)
+        {
+            var webClient = new WebClient();
+            return await webClient.DownloadStringTaskAsync(new Uri("https://raw.github.com/skalinets/tdd4net.posts/master/posts/" + postId + ".md")); 
         }
     }
 }

@@ -28,6 +28,7 @@ namespace Tdd4.net
             ApplyHandlerConventions<RootAnchor>();
             
             Import<RazorEngineRegistry>();
+            Assets.Alias("bootstrap").Is("bootstrap-min.js");
 
             Assets.YSOD_on_missing_assets(true);
 
