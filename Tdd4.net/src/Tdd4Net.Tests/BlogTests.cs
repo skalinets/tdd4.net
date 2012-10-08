@@ -18,7 +18,6 @@ namespace Tdd4Net.Tests
 
         public BlogTests()
         {
-            // arrange 
             blog = new Blog();
             initialPosts = Builder<Post>.CreateListOfSize(1)
                 .All()
