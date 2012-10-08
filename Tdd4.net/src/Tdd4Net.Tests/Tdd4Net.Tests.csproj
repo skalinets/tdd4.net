@@ -74,9 +74,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Tdd4.net\Tdd4.net.csproj">
+    <ProjectReference Include="..\..\Tdd4.net\Tdd4.net.Site.csproj">
       <Project>{9F3D140A-BC61-4678-AF8B-A7BFB7FBB3A1}</Project>
-      <Name>Tdd4.net</Name>
+      <Name>Tdd4.net.Site</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
