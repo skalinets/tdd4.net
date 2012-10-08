@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using FizzWare.NBuilder;
 using FluentAssertions;
+using NSubstitute;
 using Tdd4.net.Business;
 using Xunit;
 
@@ -88,23 +89,44 @@ namespace Tdd4Net.Tests
 
     public class GithubProviderTester
     {
+        private readonly GithubProvider githubProvider;
+
+        public GithubProviderTester()
+        {
+            githubProvider = new GithubProvider("https://raw.github.com/skalinets/tdd4net.posts/for-tests/");
+        }
+
         [Fact]
         public void should_get_text_from_github()
         {
-            var githubProvider = new GithubProvider();
+            string result = githubProvider.GetText("posts/test-post.mb");
 
-            string result = githubProvider.GetText("first-post").Result;
+            result.Should().Be("this is test post"); 
+        }
 
-            result.Should().Contain("this is my");
+        [Fact]
+        public void should_return_all_ids()
+        {
+//            var allIds = githubProvider.GetAllIds();
+
         }
     }
 
     public class GithubProvider
     {
-        public async Task<string> GetText(string postId)
+        private readonly string root;
+
+        public GithubProvider(string root)
+        {
+            this.root = root;
+        }
+
+        public string GetText(string postId)
         {
             var webClient = new WebClient();
-            return await webClient.DownloadStringTaskAsync(new Uri("https://raw.github.com/skalinets/tdd4net.posts/master/posts/" + postId + ".md")); 
+            var address = root + postId;
+            Console.Out.WriteLine("address = {0}", address);
+            return webClient.DownloadString(new Uri(address)); 
         }
     }
 }
