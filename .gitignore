@@ -38,3 +38,14 @@ aspnetdb_log.ldf
 *.ncrunchproject
 *.ncrunchsolution
 packages/
+sidekickapp.exe
+dotnet.watchr.rb
+green.png
+red.png
+sidekick.bat
+sidekickapp.cs
+DebuggerShim.cs
+PostConverterTests.cs
+specwatchr-usage.txt
+watcher_dot_net.rb
+watchr.bat
