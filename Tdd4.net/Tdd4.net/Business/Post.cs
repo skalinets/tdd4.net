@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Web;
 using FubuCore;
 
@@ -9,6 +10,11 @@ namespace Tdd4.net.Business
         public string Title { get; set; }
         public string Body { get; set; }
         public HttpPostedFileBase Image { get; set; }
+
+        public Post()
+        {
+            this.Tags = new List<string>();
+        }
 
         public string ImageDescription
         {
@@ -25,5 +31,7 @@ namespace Tdd4.net.Business
         {
             get { return "s/" + Id; }
         }
+
+        public List<string> Tags { get; set; }
     }
 }

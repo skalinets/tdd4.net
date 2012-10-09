@@ -99,7 +99,6 @@ namespace Tdd4Net.Tests
         public void should_get_text_from_github()
         {
             string result = githubProvider.GetText("posts/test-post.mb");
-
             result.Should().Be("this is test post"); 
         }
 
@@ -124,7 +123,6 @@ namespace Tdd4Net.Tests
         {
             var webClient = new WebClient();
             var address = root + postId;
-            Console.Out.WriteLine("address = {0}", address);
             return webClient.DownloadString(new Uri(address)); 
         }
     }
