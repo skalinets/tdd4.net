@@ -53,39 +53,6 @@ namespace Tdd4Net.Tests
         }
     }
 
-    public class PostTests
-    {
-        [Fact]
-        public void should_provide_image_url()
-        {
-            // arrange
-            var id = Guid.NewGuid();
-//            var post = new Post {Image = new byte[] {1, 2}, Id = id};
-
-            // act
-//            var imageUrl = post.ImageUrl;
-//
-//            // assert
-//            imageUrl.Should().Be("s/" + id);
-        }
-    }
-
-    public class ImageUlrTester
-    {
-        [Fact]
-        public void should_return_image_data_by_post_id()
-        {
-            // arrange
-            var handler = new Tdd4.net.Features.S.GetHandler();
-
-            // act
-            var id = Guid.NewGuid().ToString();
-//            handler.Execute(model: new FubuImageModel{Url = id.ToString())
-
-            // assert
-        }
-    }
-
     public class GithubProviderTester
     {
         private readonly GithubProvider githubProvider;
@@ -98,15 +65,8 @@ namespace Tdd4Net.Tests
         [Fact]
         public void should_get_text_from_github()
         {
-            string result = githubProvider.GetText("posts/test-post.mb");
-            result.Should().Be("this is test post"); 
-        }
-
-        [Fact]
-        public void should_return_all_ids()
-        {
-//            var allIds = githubProvider.GetAllIds();
-
+            var result = githubProvider.GetText("posts/test-post.mb");
+            result.Should().Be("this is test post");
         }
     }
 
