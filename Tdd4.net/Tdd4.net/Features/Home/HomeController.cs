@@ -2,16 +2,16 @@ using Tdd4.net.Business;
 
 namespace Tdd4.net.Features.Home
 {
-    public class GetHandler
+    public class HomeController
     {
         private readonly IBlog blog;
 
-        public GetHandler(IBlog blog)
+        public HomeController(IBlog blog)
         {
             this.blog = blog;
         }
 
-        public AllPostsModel Execute(PostFilter model)
+        public AllPostsModel Items(PostFilter model)
         {
             return new AllPostsModel("Hello", blog.GetPosts(p => true));
         }

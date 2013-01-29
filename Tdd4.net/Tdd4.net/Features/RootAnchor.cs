@@ -3,7 +3,6 @@ using System.Web.Compilation;
 using FubuMVC.Core.Continuations;
 using FubuMVC.Core.Http;
 using FubuMVC.Core.Runtime;
-using RazorEngine;
 
 namespace Tdd4.net.Features
 {

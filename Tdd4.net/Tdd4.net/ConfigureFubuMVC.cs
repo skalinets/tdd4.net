@@ -13,7 +13,8 @@ namespace Tdd4.net
         public ConfigureFubuMVC()
         {
             // This line turns on the basic diagnostics and request tracing
-            IncludeDiagnostics(true);
+            // todo: fix this
+//            IncludeDiagnostics(true);
 
             // All public methods from concrete classes ending in "Controller"
             // in this assembly are assumed to be action methods
@@ -24,17 +25,22 @@ namespace Tdd4.net
                 .IgnoreControllerNamesEntirely()
                 .IgnoreMethodSuffix("Html")
                 .RootAtAssemblyNamespace();
-
-            ApplyHandlerConventions<RootAnchor>();
             
-            Import<RazorEngineRegistry>();
+//            Import<RazorEngineRegistry>();
 //            Assets.Alias("bootstrap").Is("bootstrap-min.js");
     
-            Assets.YSOD_on_missing_assets(true);
+//            Assets.YSOD_on_missing_assets(true);
 
             // Match views to action methods by matching
             // on model type, view name, and namespace
-            Views.TryToAttachWithDefaultConventions();
+        }
+    }
+
+    public class FooController
+    {
+        public string hello()
+        {
+            return "hello mother fucker";
         }
     }
 }

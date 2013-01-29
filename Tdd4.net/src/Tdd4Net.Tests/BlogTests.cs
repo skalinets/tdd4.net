@@ -2,15 +2,18 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
+using AutofacContrib.NSubstitute;
 using FizzWare.NBuilder;
 using FluentAssertions;
 using HtmlAgilityPack;
-using NSubstitute;
+using StructureMap;
+using StructureMap.AutoMocking;
+using StructureMap.AutoMocking.NSubstitute;
 using Tdd4.net.Business;
+using Tdd4.net.Features.Home;
 using Xunit;
+using NSubstitute;
 
 namespace Tdd4Net.Tests
 {
@@ -53,6 +56,19 @@ namespace Tdd4Net.Tests
 
             // assert
             GetAllPosts().Should().NotContain(post);
+        }
+    }
+
+    public class HomeHandlerTester
+    {
+        [Fact]
+        public void should_return_all_posts()
+        {
+            var autoSubstitute = new AutoSubstitute();
+            var post = new Post();
+            autoSubstitute.Resolve<IBlog>().GetPosts(Arg.Is<Func<object, bool>>(f => f(post))).Returns(new[] { post });
+            var handler = autoSubstitute.Resolve<HomeController>();
+            handler.Items(null).Posts.Should().Equal(new[] {post});
         }
     }
 
