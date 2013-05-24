@@ -7,22 +7,21 @@ using Tdd4.net.Features.Home;
 
 namespace Tdd4.net.Features.Remove
 {
-    public class GetHandler
+    public class RemovePostHandler
     {
         private readonly IBlog blog;
 
-        public GetHandler(IBlog blog)
+        public RemovePostHandler(IBlog blog)
         {
             this.blog = blog;
         }
 
-        public FubuContinuation Execute(RemoveModel model)
+        public FubuContinuation RemovePost(RemoveModel model)
         {
             blog.RemovePostById(model.PostIdToRemove);
             return FubuContinuation.RedirectTo(new PostFilter());
         }
     }
-
     
 }
 

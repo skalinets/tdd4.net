@@ -5,6 +5,7 @@ using FubuMVC.Core.Registration.Nodes;
 using FubuMVC.Core.Registration.Routes;
 using FubuMVC.Razor;
 using Tdd4.net.Features;
+using Tdd4.net.Features.Home;
 
 namespace Tdd4.net
 {
@@ -24,12 +25,14 @@ namespace Tdd4.net
             Routes
                 .IgnoreControllerNamesEntirely()
                 .IgnoreMethodSuffix("Html")
+//                .HomeIs<FooController>(x => x.hello())
+                .HomeIs<HomeController>(x => x.Items(new PostFilter()))
                 .RootAtAssemblyNamespace();
             
 //            Import<RazorEngineRegistry>();
 //            Assets.Alias("bootstrap").Is("bootstrap-min.js");
     
-//            Assets.YSOD_on_missing_assets(true);
+//            Asset.YSOD_on_missing_assets(true);
 
             // Match views to action methods by matching
             // on model type, view name, and namespace
