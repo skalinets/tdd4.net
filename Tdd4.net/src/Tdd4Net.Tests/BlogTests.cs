@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Web;
 using AutofacContrib.NSubstitute;
 using FluentAssertions;
+using Ploeh.AutoFixture;
 using StructureMap;
 using StructureMap.AutoMocking;
 using StructureMap.AutoMocking.NSubstitute;
@@ -10,6 +12,7 @@ using Tdd4.net.Business;
 using Tdd4.net.Features.Home;
 using Xunit;
 using NSubstitute;
+using System.Linq;
 
 namespace Tdd4Net.Tests
 {
@@ -21,9 +24,8 @@ namespace Tdd4Net.Tests
         public BlogTests()
         {
             blog = new Blog();
-            initialPosts = Builder<Post>.CreateListOfSize(1)
-                .All()
-                .Build();
+            var fixture = new Fixture();
+            initialPosts = fixture.Build<Post>().With(p => p.Image, null).CreateMany().ToList();
             blog.AddPosts(initialPosts);
         }
 

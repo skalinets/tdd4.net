@@ -58,6 +58,9 @@
     <Reference Include="Ploeh.AutoFixture">
       <HintPath>..\..\packages\AutoFixture.3.6.6\lib\net40\Ploeh.AutoFixture.dll</HintPath>
     </Reference>
+    <Reference Include="Ploeh.AutoFixture.AutoNSubstitute">
+      <HintPath>..\..\packages\AutoFixture.AutoNSubstitute.3.6.6\lib\net40\Ploeh.AutoFixture.AutoNSubstitute.dll</HintPath>
+    </Reference>
     <Reference Include="Ploeh.AutoFixture.Xunit">
       <HintPath>..\..\packages\AutoFixture.Xunit.3.6.6\lib\net40\Ploeh.AutoFixture.Xunit.dll</HintPath>
     </Reference>
@@ -73,6 +76,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
