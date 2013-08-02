@@ -1,5 +1,4 @@
 ﻿@using Tdd4.net.Business
-@using Tdd4.net.Features.Add
 @using Tdd4.net.Features.Remove
 @model Tdd4.net.Features.Home.AllPostsModel
            
@@ -12,7 +11,7 @@
     @: <img src="@post.ImageUrl"/>
     @: ===============
     <br/>
-    @this.LinkTo(new RemoveModel {PostIdToRemove = post.Id}).Text("Remove Post")
+//    @this.LinkTo(new RemoveModel {PostIdToRemove = post.Id}).Text("Remove Post")
 }
 <br/>
 @*@this.LinkTo(new FooAddPost()).Text("Add new post")*@
