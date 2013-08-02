@@ -44,10 +44,9 @@ namespace Tdd4.Net.Core
             var filesPageContent = DownloadString(directoryAddress);
             var doc = new HtmlDocument();
             doc.LoadHtml(filesPageContent);
-            var files = doc.DocumentNode
-                           .SelectNodes("//td[@class='content']/a")
-                           .SelectMany(node => node.Attributes.Where(a => a.Name == "href")
-                                                   .Select(a => a.Value)).Select(link => Regex.Match(link, @"/(?<filename>(\w|-|_|\s)+)\.mb$").Groups["filename"].Value)
+            var htmlNodeCollection = doc.DocumentNode.SelectNodes("//td[@class='content']//a");
+            var hrefs = htmlNodeCollection.SelectMany(node => node.Attributes.Where(a => a.Name == "href").Select(a => a.Value));
+            var files = hrefs.Select(link => Regex.Match(link, @"/(?<filename>(\w|-|_|\s)+)\.mb$").Groups["filename"].Value)
                            .ToList();
             return files;
         }
