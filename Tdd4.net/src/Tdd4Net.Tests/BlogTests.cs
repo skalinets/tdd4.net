@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using AutofacContrib.NSubstitute;
-using FizzWare.NBuilder;
 using FluentAssertions;
 using StructureMap;
 using StructureMap.AutoMocking;
